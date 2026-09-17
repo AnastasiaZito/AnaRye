@@ -1,0 +1,297 @@
+/* ========================================
+Metal Music Library - Dark Theme Styles
+Black background with metallic gray text
+========================================= */
+
+/*=======Global styles========== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(24, 24, 24); /*black*/
+    color: #c0c0c0; /*metallic silver text */
+    min-height: 100vh;
+    line-height: 1.6;
+}
+/* =======Navigation bar======= */
+.navbar {
+    background-color: rgb(24, 24, 24); /*black*/
+    border-bottom: 2px solid #2a2a2a;
+    padding: 0 20 px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.logo {
+    font-size: 1.5em;
+    color: #d4d4d4;  /*light metallic */
+    letter-spacing: 1px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.nav-links a {
+    color: #999999;  /*medium gray */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.nav-links a:hover {
+    background-color: #1a1a1a;
+    color: #d4d4d4;  /* brighter on hover */
+}
+.nav-links a.active {
+    background-color: #2a2a2a;
+    color: #e0e0ee;  /*brightes for active */
+    border-bottom: 2ps solid #666666;
+}
+/* =======Main Container=======*/
+.container{
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+/*=========Home Page==========*/
+.home-page {
+    text-align: center;
+}
+.home-page h2 {
+    font-size: 2em;
+    color: #d4d4d4;
+    margin-bottom: 10px;
+}
+.subtitle {
+    color: #888888;
+    font-size: 1.1em;
+    margin-bottom: 50px;
+}
+/*=======Feature cards========*/
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:30 px;
+    margin-bottom: 50px;
+}
+.feature-card {
+    background-color: #111111; /*very dark gray- almost black */
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.feature-card:hover {
+    background-color: #1a1a1a;
+    border-color: #555555;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.feature-card h3 {
+    color: #d4d4d4;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    color: #999999;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+.feature-count {
+    font-size: 2em;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+/*=======Stats section========*/
+.stats-section {
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.stats-section h3 {
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+#statsContainer {
+    color: #999999;
+}
+
+/*========Forms=========*/
+.form-section {
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+.form-section h3 {
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    color: #aaaaaa;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid #333333;
+    border-radius: 4px;
+    color: #d4d4d4;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #666666;
+}
+.form-group input::placeholder {
+    color: #555555;
+}
+/*=========Buttons=========*/
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.btn {
+   padding: 12px 24px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 1em;
+   font-weight: 600;
+   transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #3a3a3a;
+}
+.btn-secondary {
+    background-color: #1a1a1a;
+    color: #999999;
+    border: 1px solid #333333;
+}
+.btn-secondary:hover {
+    background-color: #222222;
+}
+.btn-edit {
+    background-color: #2a2a2a;
+    color: #d4d4d4;
+    padding: 6px 14px;
+    font-size: 0.9em;
+}
+.btn-edit:hover {
+    background-color: #3a3a3a;
+}
+.btn-delete {
+    background-color: #1a0a0a;
+    color: #cc6666;
+    padding: 6px 14px;
+    font-size: 0.9em;
+}
+.btn-delete:hover {
+    background-color: #2a0a0a;
+    color: #dd7777;
+}
+/*=======Tables=======*/
+.table-section {
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+}
+.table-section h3 {
+    color: #d4d4d4;
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background-color: rgb(24, 24, 24);
+}
+th {
+    color: #aaaaaa;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #2a2a2a;
+}
+td {
+    color: #c0c0c0;
+    padding: 12px 14px;
+    border-bottom: 1px solid #1a1a1a;
+}
+tbody tr:hover {
+    background-color: #181818;
+}
+.loading {
+    text-align: center;
+    color: #666666;
+    padding: 30px;
+}
+/*========Footer==========*/
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666666;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 60px;
+}
+/*========Page header========*/
+.page-header {
+    margin-bottom: 40px;
+}
+.page-header h2 {
+    color: #d4d4d4;
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+.page-header p {
+    color: #888888;
+}
+/*=======Responsive design=======*/
+@media (max-width: 768px){
+    .nav-container{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-buttons {
+        flex-direction: column;
+    }
+    table {
+        font-size: 0.9em;
+    }
+}

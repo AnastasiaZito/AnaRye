@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Music Library - Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🤘 Metal Music Library</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="songs.html" class="active">Songs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="page-header">
+            <h2>Songs Management</h2>
+            <p>Manage your collection of heavy metal anthems</p>
+        </div>
+
+        <!-- Song Form -->
+        <div class="form-section">
+            <h3 id="songFormTitle">Add New Song</h3>
+            <form id="songForm">
+                <!-- Hidden field to store song ID for updates -->
+                <input type="hidden" id="songId">
+                
+                <div class="form-group">
+                    <label for="songName">Song Name:</label>
+                    <input type="text" id="songName" required placeholder="Enter song name (e.g., Enter Sandman)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="songReleaseYear">Release Year:</label>
+                    <input type="number" id="songReleaseYear" required placeholder="Enter release year (e.g., 1991)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="songAlbumId">Album:</label>
+                    <select id="songAlbumId" required>
+                        <option value="">Select an album...</option>
+                        <!-- Albums will be loaded dynamically -->
+                    </select>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary" id="songSubmitBtn">Create Song</button>
+                    <button type="button" class="btn btn-secondary" id="cancelSongBtn" style="display: none;" onclick="cancelSongEdit()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Songs Table -->
+        <div class="table-section">
+            <h3>All Songs</h3>
+            <table id="songsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Song Name</th>
+                        <th>Release Year</th>
+                        <th>Album</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="songsTableBody">
+                    <!-- Data will be loaded dynamically from the API -->
+                    <tr>
+                        <td colspan="5" class="loading">Loading songs...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>🤘 Metal Music Library - CS230 Assignment 5</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load songs when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSongs();
+        });
+
+        // Cancel song editing
+        function cancelSongEdit() {
+            document.getElementById('songForm').reset();
+            document.getElementById('songId').value = '';
+            document.getElementById('songFormTitle').textContent = 'Add New Song';
+            document.getElementById('songSubmitBtn').textContent = 'Create Song';
+            document.getElementById('cancelSongBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

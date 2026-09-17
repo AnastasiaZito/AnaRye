@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Music Library - Albums</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🤘 Metal Music Library</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="albums.html" class="active">Albums</a></li>
+                <li><a href="songs.html">Songs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="page-header">
+            <h2>Albums Management</h2>
+            <p>Manage your collection of iconic metal albums</p>
+        </div>
+
+        <!-- Album Form -->
+        <div class="form-section">
+            <h3 id="albumFormTitle">Add New Album</h3>
+            <form id="albumForm">
+                <!-- Hidden field to store album ID for updates -->
+                <input type="hidden" id="albumId">
+                
+                <div class="form-group">
+                    <label for="albumName">Album Name:</label>
+                    <input type="text" id="albumName" required placeholder="Enter album name (e.g., Master of Puppets)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="albumReleaseYear">Release Year:</label>
+                    <input type="number" id="albumReleaseYear" required placeholder="Enter release year (e.g., 1986)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="albumListens">Number of Listens:</label>
+                    <input type="number" id="albumListens" required placeholder="Enter total number of streams">
+                </div>
+                
+                <div class="form-group">
+                    <label for="albumArtistId">Artist:</label>
+                    <select id="albumArtistId" required>
+                        <option value="">Select an artist...</option>
+                        <!-- Artists will be loaded dynamically -->
+                    </select>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary" id="albumSubmitBtn">Create Album</button>
+                    <button type="button" class="btn btn-secondary" id="cancelAlbumBtn" style="display: none;" onclick="cancelAlbumEdit()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Albums Table -->
+        <div class="table-section">
+            <h3>All Albums</h3>
+            <table id="albumsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Album Name</th>
+                        <th>Release Year</th>
+                        <th>Listens</th>
+                        <th>Artist</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="albumsTableBody">
+                    <!-- Data will be loaded dynamically from the API -->
+                    <tr>
+                        <td colspan="6" class="loading">Loading albums...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>🤘 Metal Music Library - CS230 Assignment 5</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load albums when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAlbums();
+        });
+
+        // Cancel album editing
+        function cancelAlbumEdit() {
+            document.getElementById('albumForm').reset();
+            document.getElementById('albumId').value = '';
+            document.getElementById('albumFormTitle').textContent = 'Add New Album';
+            document.getElementById('albumSubmitBtn').textContent = 'Create Album';
+            document.getElementById('cancelAlbumBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

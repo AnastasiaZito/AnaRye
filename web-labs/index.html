@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Metal Music Library - Home</title>
+        <link rel="stylesheet" href = "style.css">
+    </head>
+    <body>
+        <!--Navigation bar-->
+        <nav class="navbar">
+            <div class = "nav-container">
+                <h1 class = "logo">🤘 Metal Music Library 🤘</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="albums.html">Albums</a></li>
+                    <li><a href="songs.html">Songs</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Main Content-->
+        <main class="container">
+            <div class="home-page">
+                <h2>Welcome to Your Metal Music Library</h2>
+                <p class="subtitle">Manage your collection of the heaviest bands on the planet</p>
+                <!--Features Cards-->
+                <div class="feature-card" onclick="window.location.href='artists.html'">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Artists</h3>
+                    <p>Deftones, Gojira, Slipknot, Korn & more</p>
+                    <div class="feature-count" id="artistsCount">Loading...</div>
+                </div>
+                <!--Albums Card-->
+                <div class="feature-card" onclick="window.location.href='albums.html'">
+                    <div class="feature-icon">💿</div>
+                    <h3>Albums</h3>
+                    <p>White Pony, Iowa, Hybrid Theory & more</p>
+                    <div class="feature-count" id="albumsCount">Loading...</div>
+                </div>
+                <!--Songs Card-->
+                <div class="feature-card" onclick="window.location.href='songs.html'">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Songs</h3>
+                    <p>Change, Duality, Chop Suey! & more</p>
+                    <div class="feature-count" id="songsCount">Loading...</div>
+                </div>
+            </div>
+            <!--Quick Stats Section-->
+            <div class="stats-section">
+                <h3>Your Collection Overview</h3>
+                <div id="statsContainer">
+                    <p>Loading statistics...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--Footer-->
+        <footer class="footer">
+            <p>🤘 Metal Music Library - CS230 Assignment 5</p>
+        </footer>
+        <script src="script.js"></script>
+        <script>
+            //Load statistics when home page loads document.addEventListener('DOMContentLoaded', function(){loadHomePageStats();});
+        </script>
+    </body>
+</html>

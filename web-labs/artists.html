@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Music Library - Artists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🤘 Metal Music Library</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html" class="active">Artists</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="songs.html">Songs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="page-header">
+            <h2>Artists Management</h2>
+            <p>Add, edit, and manage your favourite metal bands</p>
+        </div>
+
+        <!-- Artist Form -->
+        <div class="form-section">
+            <h3 id="formTitle">Add New Artist</h3>
+            <form id="artistForm">
+                <!-- Hidden field to store artist ID for updates -->
+                <input type="hidden" id="artistId">
+                
+                <div class="form-group">
+                    <label for="artistName">Artist Name:</label>
+                    <input type="text" id="artistName" required placeholder="Enter artist name (e.g., Metallica)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="artistGenre">Genre:</label>
+                    <input type="text" id="artistGenre" required placeholder="Enter genre (e.g., Thrash Metal)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="artistListeners">Monthly Listeners:</label>
+                    <input type="number" id="artistListeners" required placeholder="Enter monthly listeners count">
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary" id="artistSubmitBtn">Create Artist</button>
+                    <button type="button" class="btn btn-secondary" id="cancelArtistBtn" style="display: none;" onclick="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Artists Table -->
+        <div class="table-section">
+            <h3>All Artists</h3>
+            <table id="artistsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Genre</th>
+                        <th>Monthly Listeners</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="artistsTableBody">
+                    <!-- Data will be loaded dynamically from the API -->
+                    <tr>
+                        <td colspan="5" class="loading">Loading artists...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>🤘 Metal Music Library - CS230 Assignment 5</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load artists when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadArtists();
+        });
+    </script>
+</body>
+</html>
