@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+    background-color: #add8e6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+/* Navigation Bar */
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6495ed;
+}
+.navbar li {
+    float: left;
+}
+.navbar li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar li a:hover {
+    background-color: #4682b4;
+}
+/* Header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+/* Apple container  - center of the timer */
+.apple-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto 20px auto;
+    width: 300px;
+    height: 300px;
+    z-index: 1;  /*z-index for container */
+}
+.apple-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    z-index: 2; /* timer text above apple image */
+}
+#timer {
+    font-family: 'Orbitron', monospace;
+    font-size: 36px;
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+/* Timner hover effect */
+#timer {
+    color: yellow !important;
+}
+/* Timer below 15 seconds style */
+#timer.low-time {
+    color: red !important;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+/* Button group */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: -130px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;  /* higher z-index to bring buttons to front */
+}
+.btn {
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    transition: all 0.3s ease;
+}
+/* Button hover effect - black border*/
+.btn:hover:not(:disabled){
+    border: 2px solid black;
+    transform: scale(1.05);
+}
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+/* Start button */
+.start-btn {
+    background-color: #9acd32;
+}
+/* Stop button */
+.stop-btn {
+    background-color: #dc143c;
+}
+/* Pause button */
+.pause-btn {
+    background-color: #ff8c00;
+}
+@media (max-width: 768px) {
+  .btn-group {
+    margin-top: -130px; /* Adjustment for mobile */
+    gap: 5px;
+  }
+}
